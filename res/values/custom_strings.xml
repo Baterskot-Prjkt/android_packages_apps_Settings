@@ -367,4 +367,7 @@
     <string name="language_picker_page">Language picker page</string>
     <string name="search_region">Search regions</string>
     <string name="search_region_page">Search region page</string>
+
+    <!-- Pixel Maintainer -->
+    <string name="custom_maintainer">Maintainer</string>
 </resources>
