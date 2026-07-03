@@ -20,50 +20,49 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
-
-    <!-- Android version -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/lab_layout"
+        android:selectable="false"
+        android:key="solar_core_header" />
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="divider_banner" />
     <Preference
-        android:key="os_firmware_version"
         android:title="@string/firmware_version"
+        android:key="os_firmware_version"
         android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"
         settings:enableCopying="true"
-        settings:searchable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
-
-    <!-- Security patch -->
+        settings:searchable="false" />
     <Preference
-        android:key="security_key"
+        android:key="custom_maintainer"
+        android:title="@string/custom_maintainer"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.CustomMaintainerPreferenceController"
+        settings:enableCopying="true" />
+    <Preference
         android:title="@string/security_patch"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
-
-    <!-- Mainline module version -->
+        android:key="security_key"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"
+        settings:enableCopying="true" />
     <Preference
-        android:key="module_version"
         android:title="@string/module_version"
+        android:key="module_version"
         android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>
-
-    <!-- Baseband -->
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"
+        settings:enableCopying="true" />
     <Preference
-        android:key="base_band"
         android:title="@string/baseband_version"
-        android:summary="@string/summary_placeholder"
         android:selectable="false"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
-
-    <!-- Kernel -->
+        android:key="base_band"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"
+        settings:enableCopying="true" />
     <Preference
-        android:key="kernel_version"
         android:title="@string/kernel_version"
-        android:summary="@string/summary_placeholder"
         android:selectable="false"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
-
-    <!-- Build -->
+        android:key="kernel_version"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"
+        settings:enableCopying="true" />
     <Preference
         android:key="os_build_number"
         android:title="@string/build_number"
@@ -71,5 +70,4 @@
         android:selectable="false"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SimpleBuildNumberPreferenceController"/>
-
 </PreferenceScreen>

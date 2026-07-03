@@ -29,8 +29,6 @@ import com.android.settings.utils.makeLaunchIntent
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
 import com.android.settingslib.metadata.ProvidePreferenceScreen
-import com.android.settingslib.metadata.preferenceHierarchy
-import kotlinx.coroutines.CoroutineScope
 
 @ProvidePreferenceScreen(FirmwareVersionScreen.KEY)
 open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvider {
@@ -54,7 +52,6 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
     override val indexable
         get() = true
 
-    // Once fully launch, change to PreferenceFragment and clean up FirmwareVersionScreenTest
     override fun fragmentClass(): Class<out Fragment>? = FirmwareVersionSettings::class.java
 
     override fun getMetricsCategory() = SettingsEnums.DIALOG_FIRMWARE_VERSION
@@ -62,21 +59,10 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
     override val highlightMenuKey: Int
         get() = R.string.menu_key_about_device
 
-    override fun hasCompleteHierarchy() = true
+    override fun hasCompleteHierarchy() = false
 
     override fun getLaunchIntent(context: Context, metadata: PreferenceMetadata?) =
         makeLaunchIntent(context, FirmwareVersionActivity::class.java, metadata?.key)
-
-    override fun getPreferenceHierarchy(context: Context, coroutineScope: CoroutineScope) =
-        preferenceHierarchy(context) {
-            +FirmwareVersionDetailPreference()
-            +SecurityPatchLevelPreference()
-            +MainlineModuleVersionPreference()
-            +CustomMaintainerPreference()
-            +BasebandVersionPreference()
-            +KernelVersionPreference()
-            +SimpleBuildNumberPreference()
-        }
 
     companion object {
         const val KEY = "firmware_version"
