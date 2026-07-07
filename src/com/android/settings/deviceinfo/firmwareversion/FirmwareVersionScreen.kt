@@ -70,7 +70,7 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
         context: Context,
         coroutineScope: CoroutineScope
     ): PreferenceHierarchy {
-        throw UnsupportedOperationException("getPreferenceHierarchy is not yet supported for FirmwareVersionScreen")
+        return PreferenceHierarchy(this)
     }
 
     companion object {
