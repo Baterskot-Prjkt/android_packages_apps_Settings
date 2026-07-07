@@ -26,9 +26,11 @@ import com.android.settings.contract.TAG_DEVICE_STATE_SCREEN
 import com.android.settings.core.PreferenceScreenMixin
 import com.android.settings.flags.Flags
 import com.android.settings.utils.makeLaunchIntent
+import com.android.settingslib.metadata.PreferenceHierarchy
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
 import com.android.settingslib.metadata.ProvidePreferenceScreen
+import kotlinx.coroutines.CoroutineScope
 
 @ProvidePreferenceScreen(FirmwareVersionScreen.KEY)
 open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvider {
@@ -63,6 +65,13 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
 
     override fun getLaunchIntent(context: Context, metadata: PreferenceMetadata?) =
         makeLaunchIntent(context, FirmwareVersionActivity::class.java, metadata?.key)
+
+    override fun getPreferenceHierarchy(
+        context: Context,
+        coroutineScope: CoroutineScope
+    ): PreferenceHierarchy {
+        throw UnsupportedOperationException("getPreferenceHierarchy is not yet supported for FirmwareVersionScreen")
+    }
 
     companion object {
         const val KEY = "firmware_version"
