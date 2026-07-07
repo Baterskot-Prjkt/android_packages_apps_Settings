@@ -30,6 +30,7 @@ import com.android.settingslib.metadata.PreferenceHierarchy
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
 import com.android.settingslib.metadata.ProvidePreferenceScreen
+import com.android.settingslib.metadata.preferenceHierarchy
 import kotlinx.coroutines.CoroutineScope
 
 @ProvidePreferenceScreen(FirmwareVersionScreen.KEY)
@@ -69,9 +70,7 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
     override fun getPreferenceHierarchy(
         context: Context,
         coroutineScope: CoroutineScope
-    ): PreferenceHierarchy {
-        return PreferenceHierarchy(this)
-    }
+    ): PreferenceHierarchy = preferenceHierarchy(context) {}
 
     companion object {
         const val KEY = "firmware_version"
