@@ -46,20 +46,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sun"
-                    android:textColor="#ffffffff"
-                    android:textSize="45sp"
-                    android:textStyle="bold"
-                    android:fontFamily="cursive" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Droid"
+                    android:text="Cinnamon"
                     android:textColor="#F9CFAE"
                     android:textSize="45sp"
                     android:textStyle="bold"
