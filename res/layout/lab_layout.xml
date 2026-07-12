@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:foreground="#3f000000"
-            android:src="@drawable/sun_banner"
+            android:src="@drawable/delphinium_banner"
             android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -49,8 +49,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cinnamon"
-                    android:textColor="#F9CFAE"
+                    android:text="Delphinuim"
+                    android:textColor="#aee9f9"
                     android:textSize="45sp"
                     android:textStyle="bold"
                     android:fontFamily="cursive" />
